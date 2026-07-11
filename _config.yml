@@ -1,0 +1,65 @@
+# --- Site settings ---
+title: Jouval Somer
+tagline: Computational & Applied Mathematics · Machine Learning for Hydrology
+description: >-
+  Personal website of Jouval Max Erik Somer — incoming Industry PhD in Machine
+  Learning for Hydrology at the University of Oslo & Expert Analytics. Blog, CV,
+  publications, projects and academic news.
+author:
+  name: Jouval Max Erik Somer
+  email: jouval.somer@gmail.com
+
+# Update this after you create the repo. For a user site
+# (JouvalSomer.github.io) leave baseurl empty and set url below.
+url: "https://JouvalSomer.github.io"
+baseurl: ""
+
+# --- Social / contact links ---
+github_username: JouvalSomer
+linkedin_username: jouvalsomer
+email: jouval.somer@gmail.com
+
+# --- Build settings ---
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:year/:month/:day/:title/
+timezone: Europe/Oslo
+
+# Collections
+collections:
+  news:
+    output: false
+  projects:
+    output: false
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+    values:
+      layout: page
+
+# Pagination for blog (jekyll-paginate)
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - resume.cls
+  - "*.tex"
+  - assets/cv/README.md
+  - assets/img/README.md

@@ -1,0 +1,59 @@
+---
+layout: default
+title: Home
+---
+<div class="wrap">
+  <section class="hero">
+    <img class="hero-avatar" src="{{ '/assets/img/avatar.jpg' | relative_url }}" alt="Jouval Somer" onerror="this.src='https://ui-avatars.com/api/?name=Jouval+Somer&size=264&background=2f6df6&color=fff&bold=true'">
+    <div class="hero-text">
+      <h1>Jouval Somer</h1>
+      <p class="hero-role">Incoming Industry PhD · Machine Learning for Hydrology</p>
+      <p>
+        I work at the intersection of computational mathematics and machine learning,
+        building data-driven methods for reservoir inflow forecasting, hydrological
+        modelling, and data assimilation. Starting autumn 2026 as an Industry PhD
+        (Nærings-PhD) with the University of Oslo and Expert Analytics.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="{{ '/cv/' | relative_url }}">View CV</a>
+        <a class="btn" href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="mailto:{{ site.email }}">Email</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest news -->
+  <section class="section-block">
+    <div class="section-head">
+      <h2>Latest news</h2>
+      <a href="{{ '/news/' | relative_url }}">All news →</a>
+    </div>
+    <div class="card">
+      {% assign recent_news = site.news | sort: 'date' | reverse %}
+      {% for item in recent_news limit: 4 %}
+        <div class="news-item">
+          <div class="news-date">{{ item.date | date: "%b %Y" }}</div>
+          <div class="news-body">{{ item.content | markdownify }}</div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Recent posts -->
+  <section class="section-block">
+    <div class="section-head">
+      <h2>From the blog</h2>
+      <a href="{{ '/blog/' | relative_url }}">All posts →</a>
+    </div>
+    <ul class="post-list">
+      {% for post in site.posts limit: 3 %}
+        <li class="post-list-item">
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</p>
+          <p class="excerpt">{{ post.description | default: post.excerpt | strip_html | truncate: 160 }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+</div>

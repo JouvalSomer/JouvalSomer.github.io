@@ -1,0 +1,24 @@
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
+    <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="site-nav">
+      {%- assign nav_pages = "/,Home|/cv/,CV|/publications/,Publications|/projects/,Projects|/news/,News|/blog/,Blog" | split: "|" -%}
+      {%- for item in nav_pages -%}
+        {%- assign parts = item | split: "," -%}
+        {%- assign href = parts[0] -%}
+        {%- assign label = parts[1] -%}
+        {%- assign full = href | relative_url -%}
+        <a href="{{ full }}"{% if page.url == href %} class="active"{% endif %}>{{ label }}</a>
+      {%- endfor -%}
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <span class="theme-icon-light">☀</span><span class="theme-icon-dark">☾</span>
+      </button>
+    </nav>
+  </div>
+</header>

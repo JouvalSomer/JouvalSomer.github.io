@@ -22,20 +22,28 @@ cv.md, publications.md, projects.md, news.md, blog.html
 .github/workflows/       CI build + deploy to Pages
 ```
 
-## Publish it (first time)
+## Status & how to publish
 
-1. Create a GitHub repo named **`JouvalSomer.github.io`** (exact match to your username makes it a user site served at `https://jouvalsomer.github.io`).
-2. From this folder:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial website"
-   git branch -M main
-   git remote add origin https://github.com/JouvalSomer/JouvalSomer.github.io.git
-   git push -u origin main
-   ```
-3. On GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-4. The workflow builds and deploys on every push to `main`. Your site goes live at `https://jouvalsomer.github.io`.
+The repo is already created, pushed, and **private** (git remote `origin` →
+`JouvalSomer/JouvalSomer.github.io`). Nothing is published yet — the deploy
+workflow is set to **manual only** (`workflow_dispatch`).
+
+### Privacy note
+GitHub Pages **cannot be password-protected** on a personal account. On **Free**,
+Pages only publishes from a **public** repo. On **Pro/Team**, it can publish from
+a private repo, but the resulting site is still publicly viewable. Truly private
+(access-controlled) Pages is **Enterprise Cloud only**. So: tune locally while the
+repo stays private, and only publish when you're ready for the site to be public.
+
+### When you're ready to go live
+1. Make the repo public (Free plan) — `gh repo edit JouvalSomer/JouvalSomer.github.io --visibility public --accept-visibility-change-consequences` — or keep private if you have Pro.
+2. On GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+3. Trigger a deploy: **Actions tab → "Build and deploy…" → Run workflow**, or push after re-enabling the `push:` trigger in `.github/workflows/jekyll.yml`.
+4. Site goes live at `https://jouvalsomer.github.io`.
+
+### Enable automatic rebuilds on every push
+Uncomment the `push:` trigger block at the top of
+`.github/workflows/jekyll.yml`.
 
 > If you instead use a differently-named repo (a "project site"), set
 > `baseurl: "/repo-name"` in `_config.yml`.

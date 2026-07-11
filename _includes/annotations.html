@@ -1,0 +1,23 @@
+{%- comment -%}
+Collaborative annotation via Hypothesis (https://web.hypothes.is/).
+Enabled when site.annotations is truthy, unless a page sets `annotations: false`.
+{%- endcomment -%}
+{%- if page.annotations == nil -%}{%- assign _ann = site.annotations -%}{%- else -%}{%- assign _ann = page.annotations -%}{%- endif -%}
+{%- if _ann -%}
+<aside class="annotate-hint" role="note">
+  <strong>💬 Annotation is on.</strong>
+  Select any text to <em>highlight</em> it or leave a <em>margin comment</em> —
+  open the panel with the tab on the top-right of the page. Powered by
+  <a href="https://web.hypothes.is/" target="_blank" rel="noopener">Hypothesis</a>;
+  reviewers need a free account{% if site.annotations_group %} and an invite to the private group{% endif %}.
+</aside>
+
+<script type="application/json" class="js-hypothesis-config">
+{
+  "openSidebar": false,
+  "theme": "clean"{% if site.annotations_group %},
+  "focus": { "group": "{{ site.annotations_group }}" }{% endif %}
+}
+</script>
+<script src="https://hypothes.is/embed.js" async></script>
+{%- endif -%}

@@ -19,6 +19,15 @@ github_username: JouvalSomer
 linkedin_username: jouvalsomer
 email: jouval.somer@gmail.com
 
+# --- Collaborative annotation (Hypothesis) ---
+# Adds a margin-comment + highlight layer to blog posts for supervisor feedback.
+# Set to false to disable site-wide; per-post override with `annotations: false`.
+annotations: true
+# Optional: restrict the default view to a PRIVATE Hypothesis group so only
+# invited supervisors see each other's notes. Create one at
+# https://hypothes.is/groups/new and paste its ID (the code in the group URL).
+annotations_group: ""
+
 # --- Build settings ---
 markdown: kramdown
 highlighter: rouge

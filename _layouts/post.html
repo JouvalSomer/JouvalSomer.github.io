@@ -13,6 +13,8 @@ layout: default
     {% if page.description %}<p class="post-subtitle">{{ page.description }}</p>{% endif %}
   </header>
 
+  {% include annotations.html %}
+
   <div class="post-content prose">
     {{ content }}
   </div>

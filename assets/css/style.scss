@@ -269,6 +269,15 @@ img { max-width: 100%; height: auto; }
 .cv-entry .cv-org { color: var(--text-muted); font-style: italic; margin: 1px 0 4px; }
 .cv-entry ul { margin: 6px 0 0; }
 
+/* Annotation hint */
+.annotate-hint {
+  font-size: 0.86rem; line-height: 1.5; color: var(--text-muted);
+  background: var(--bg-alt); border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-sm); padding: 10px 14px; margin: 0 0 28px;
+}
+.annotate-hint strong { color: var(--text); }
+
 /* Pagination */
 .pagination { display: flex; justify-content: center; gap: 14px; align-items: center; margin-top: 40px; font-size: 0.9rem; }
 .pagination .disabled { color: var(--text-muted); opacity: 0.5; }

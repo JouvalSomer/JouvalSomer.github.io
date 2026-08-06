@@ -16,7 +16,7 @@ _projects/               Project entries
 assets/css/style.scss    Styles (light + dark theme)
 assets/js/main.js        Theme toggle + mobile nav
 assets/img/avatar.jpg    Profile photo (present but currently unused)
-assets/cv/*.pdf          CV PDF
+assets/cv/               CV PDF goes here (currently none — see below)
 index.html               Home page
 cv.md, publications.md, projects.md, news.md, blog.html
 .github/workflows/       CI build + deploy to Pages
@@ -85,7 +85,28 @@ bundle exec jekyll serve --livereload
 - **News item:** create `_news/YYYY-MM-DD-slug.md` with a `date:` in front matter; the body is the update.
 - **Project:** create `_projects/slug.md` with `title`, `order`, `description`, optional `stack:` list and `link:`.
 - **Publication:** edit `publications.md` and copy a `pub-item` block.
-- **CV:** replace `assets/cv/Jouval_Somer_CV.pdf`.
+
+### Restoring the CV PDF
+
+The PDF was removed before the site went public because it carried a phone
+number, and it was purged from git history so it could not be recovered from
+earlier commits. To put it back, re-export from your LaTeX source without the
+phone number, drop it in `assets/cv/`, and re-add the download link near the top
+of `cv.md`:
+
+```html
+<p class="cv-download">
+  <a href="{{ '/assets/cv/Jouval_Somer_CV.pdf' | relative_url }}" target="_blank" rel="noopener">Download as PDF</a>
+</p>
+```
+
+### Re-enabling annotations
+
+`annotations` is `false` in `_config.yml`. With an empty `annotations_group` the
+Hypothesis layer defaults to the public group, so on a public site any account
+could annotate your posts visibly. Create a private group at
+<https://hypothes.is/groups/new>, paste its ID into `annotations_group`, then set
+`annotations: true`.
 
 ## Customise
 

@@ -20,11 +20,14 @@ email: jouval.somer@gmail.com
 
 # --- Collaborative annotation (Hypothesis) ---
 # Adds a margin-comment + highlight layer to blog posts for supervisor feedback.
-# Set to false to disable site-wide; per-post override with `annotations: false`.
-annotations: true
-# Optional: restrict the default view to a PRIVATE Hypothesis group so only
-# invited supervisors see each other's notes. Create one at
-# https://hypothes.is/groups/new and paste its ID (the code in the group URL).
+# Per-post override with `annotations: false` in the post front matter.
+#
+# OFF while the site is public and no private group is configured. With an empty
+# annotations_group the layer defaults to the PUBLIC Hypothesis group, which
+# would let any Hypothesis account leave notes that every visitor can see.
+# To turn it back on: create a private group at https://hypothes.is/groups/new,
+# paste its ID below, then set annotations: true.
+annotations: false
 annotations_group: ""
 
 # --- Build settings ---

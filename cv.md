@@ -4,10 +4,6 @@ title: Curriculum Vitae
 permalink: /cv/
 ---
 
-<p class="cv-download">
-  <a href="{{ '/assets/cv/Jouval_Somer_CV.pdf' | relative_url }}" target="_blank" rel="noopener">Download as PDF</a>
-</p>
-
 Computational and applied mathematician working on machine learning for
 hydrology: reservoir inflow forecasting, spatial snow representation, data
 assimilation, and semi-distributed (LSTM and graph neural network) modelling.

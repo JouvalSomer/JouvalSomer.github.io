@@ -1,17 +1,16 @@
 ---
 layout: page
 title: Curriculum Vitae
-subtitle: Jouval Max Erik Somer — Computational & Applied Mathematics
 permalink: /cv/
 ---
 
 <p class="cv-download">
-  <a class="btn btn-primary" href="{{ '/assets/cv/Jouval_Somer_CV.pdf' | relative_url }}" target="_blank" rel="noopener">Download PDF</a>
+  <a href="{{ '/assets/cv/Jouval_Somer_CV.pdf' | relative_url }}" target="_blank" rel="noopener">Download as PDF</a>
 </p>
 
 Computational and applied mathematician working on machine learning for
-hydrology — reservoir inflow forecasting, spatial snow representation, data
-assimilation, and semi-distributed (LSTM + graph neural network) modelling.
+hydrology: reservoir inflow forecasting, spatial snow representation, data
+assimilation, and semi-distributed (LSTM and graph neural network) modelling.
 
 ## Education
 

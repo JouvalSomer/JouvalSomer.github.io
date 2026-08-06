@@ -5,11 +5,10 @@ Enabled when site.annotations is truthy, unless a page sets `annotations: false`
 {%- if page.annotations == nil -%}{%- assign _ann = site.annotations -%}{%- else -%}{%- assign _ann = page.annotations -%}{%- endif -%}
 {%- if _ann -%}
 <aside class="annotate-hint" role="note">
-  <strong>💬 Annotation is on.</strong>
-  Select any text to <em>highlight</em> it or leave a <em>margin comment</em> —
-  open the panel with the tab on the top-right of the page. Powered by
-  <a href="https://web.hypothes.is/" target="_blank" rel="noopener">Hypothesis</a>;
-  reviewers need a free account{% if site.annotations_group %} and an invite to the private group{% endif %}.
+  Select any text to highlight it or leave a margin comment. Open the panel with
+  the tab at the top right. Runs on
+  <a href="https://web.hypothes.is/" target="_blank" rel="noopener">Hypothesis</a>,
+  so reviewers need a free account{% if site.annotations_group %} and an invite to the private group{% endif %}.
 </aside>
 
 <script type="application/json" class="js-hypothesis-config">

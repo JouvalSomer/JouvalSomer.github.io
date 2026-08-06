@@ -16,9 +16,6 @@
         {%- assign full = href | relative_url -%}
         <a href="{{ full }}"{% if page.url == href %} class="active"{% endif %}>{{ label }}</a>
       {%- endfor -%}
-      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
-        <span class="theme-icon-light">☀</span><span class="theme-icon-dark">☾</span>
-      </button>
     </nav>
   </div>
 </header>

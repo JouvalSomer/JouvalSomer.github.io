@@ -1,10 +1,9 @@
 # --- Site settings ---
 title: Jouval Somer
-tagline: Computational & Applied Mathematics · Machine Learning for Hydrology
+tagline: Machine learning for hydrology
 description: >-
-  Personal website of Jouval Max Erik Somer — incoming Industry PhD in Machine
-  Learning for Hydrology at the University of Oslo & Expert Analytics. Blog, CV,
-  publications, projects and academic news.
+  Jouval Somer, Industry PhD candidate in machine learning for hydrology at the
+  University of Oslo and Expert Analytics. Notes, CV, publications and projects.
 author:
   name: Jouval Max Erik Somer
   email: jouval.somer@gmail.com

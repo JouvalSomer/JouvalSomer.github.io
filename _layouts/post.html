@@ -4,7 +4,7 @@ layout: default
 <article class="post wrap">
   <header class="post-header">
     <p class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
       {% if page.tags.size > 0 %}
         · {% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
       {% endif %}
@@ -20,13 +20,19 @@ layout: default
   </div>
 
   <nav class="post-nav">
-    {% if page.previous.url %}
-      <a class="prev" href="{{ page.previous.url | relative_url }}">← {{ page.previous.title }}</a>
-    {% endif %}
-    {% if page.next.url %}
-      <a class="next" href="{{ page.next.url | relative_url }}">{{ page.next.title }} →</a>
-    {% endif %}
+    <div class="prev">
+      {% if page.previous.url %}
+        <span class="nav-dir">Previous</span>
+        <a href="{{ page.previous.url | relative_url }}">{{ page.previous.title }}</a>
+      {% endif %}
+    </div>
+    <div class="next">
+      {% if page.next.url %}
+        <span class="nav-dir">Next</span>
+        <a href="{{ page.next.url | relative_url }}">{{ page.next.title }}</a>
+      {% endif %}
+    </div>
   </nav>
 
-  <p class="back-link"><a href="{{ '/blog/' | relative_url }}">← All posts</a></p>
+  <p class="back-link"><a href="{{ '/blog/' | relative_url }}">All posts</a></p>
 </article>

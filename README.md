@@ -1,31 +1,52 @@
 # JouvalSomer.github.io
 
-Personal website & blog for Jouval Max Erik Somer — CV, publications, projects,
-academic news, and a blog. Built with [Jekyll](https://jekyllrb.com) and deployed
-to GitHub Pages via GitHub Actions.
+Personal website and blog for Jouval Max Erik Somer: CV, publications, projects,
+news, and writing. Built with [Jekyll](https://jekyllrb.com) and deployed to
+GitHub Pages via GitHub Actions.
 
 ## Structure
 
 ```
 _config.yml              Site configuration
 _layouts/                default, page, post templates
-_includes/               head, header, footer partials
+_includes/               head, header, footer, annotations partials
 _posts/                  Blog posts  (YYYY-MM-DD-title.md)
 _news/                   News items  (short updates)
-_projects/               Project cards
+_projects/               Project entries
 assets/css/style.scss    Styles (light + dark theme)
 assets/js/main.js        Theme toggle + mobile nav
-assets/img/avatar.jpg    Profile photo (you add this)
-assets/cv/*.pdf          CV PDF (you add this)
+assets/img/avatar.jpg    Profile photo (present but currently unused)
+assets/cv/*.pdf          CV PDF
 index.html               Home page
 cv.md, publications.md, projects.md, news.md, blog.html
 .github/workflows/       CI build + deploy to Pages
 ```
 
+## Design
+
+The site is deliberately plain: no cards, no drop shadows, no rounded corners, no
+pill buttons. Structure comes from hairline rules and whitespace instead. If you
+add something new, match that.
+
+| Decision | Value |
+| --- | --- |
+| Type | OS system sans (`Segoe UI` / SF / Roboto). `Source Sans 3` sits last in the stack as a fallback for platforms without a good built-in sans, mainly Linux. Browsers only download it if it is actually used, so most visitors fetch no font files. |
+| Accent | Oxford Blue `#002147`, lightened to `#9cc0e8` in dark mode so links stay legible |
+| Serif | None anywhere, including post bodies |
+| Measure | 720px (`--maxw`) |
+| Corners | `0` everywhere. No `border-radius`, no `box-shadow` |
+| Header | Static, single hairline underneath. Not sticky, no backdrop blur |
+| Dark mode | Manual toggle, rendered as a plain `Dark` / `Light` text link in the footer |
+| Dates | `%-d %B %Y` |
+| Photo | None on the front page |
+
+Prose leans short and concrete. Avoid em-dashes, decorative arrow suffixes on
+links (`All news →`), and three-item lists as a default sentence shape.
+
 ## Status & how to publish
 
-The repo is already created, pushed, and **private** (git remote `origin` →
-`JouvalSomer/JouvalSomer.github.io`). Nothing is published yet — the deploy
+The repo is created, pushed, and **private** (git remote `origin` →
+`JouvalSomer/JouvalSomer.github.io`). Nothing is published yet: the deploy
 workflow is set to **manual only** (`workflow_dispatch`).
 
 ### Privacy note
@@ -33,10 +54,10 @@ GitHub Pages **cannot be password-protected** on a personal account. On **Free**
 Pages only publishes from a **public** repo. On **Pro/Team**, it can publish from
 a private repo, but the resulting site is still publicly viewable. Truly private
 (access-controlled) Pages is **Enterprise Cloud only**. So: tune locally while the
-repo stays private, and only publish when you're ready for the site to be public.
+repo stays private, and only publish when you are ready for the site to be public.
 
 ### When you're ready to go live
-1. Make the repo public (Free plan) — `gh repo edit JouvalSomer/JouvalSomer.github.io --visibility public --accept-visibility-change-consequences` — or keep private if you have Pro.
+1. Make the repo public (Free plan): `gh repo edit JouvalSomer/JouvalSomer.github.io --visibility public --accept-visibility-change-consequences`. Keep it private if you have Pro.
 2. On GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 3. Trigger a deploy: **Actions tab → "Build and deploy…" → Run workflow**, or push after re-enabling the `push:` trigger in `.github/workflows/jekyll.yml`.
 4. Site goes live at `https://jouvalsomer.github.io`.
@@ -64,10 +85,13 @@ bundle exec jekyll serve --livereload
 - **News item:** create `_news/YYYY-MM-DD-slug.md` with a `date:` in front matter; the body is the update.
 - **Project:** create `_projects/slug.md` with `title`, `order`, `description`, optional `stack:` list and `link:`.
 - **Publication:** edit `publications.md` and copy a `pub-item` block.
-- **Photo / CV:** drop `avatar.jpg` in `assets/img/` and `Jouval_Somer_CV.pdf` in `assets/cv/`.
+- **CV:** replace `assets/cv/Jouval_Somer_CV.pdf`.
 
 ## Customise
 
-- Colors, fonts, spacing → `assets/css/style.scss` (`:root` and `[data-theme="dark"]`).
+- Colours, fonts, spacing → `assets/css/style.scss` (`:root` and `[data-theme="dark"]`).
 - Nav links → `_includes/header.html`.
 - Bio / hero text → `index.html`.
+- To put the photo back on the front page, add an `<img>` to the `.hero` block in
+  `index.html` and give it a width, height and `object-fit: cover` in the
+  `/* Home / hero */` section of the stylesheet.

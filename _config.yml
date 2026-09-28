@@ -18,6 +18,11 @@ github_username: JouvalSomer
 linkedin_username: jouvalsomer
 email: jouval.somer@gmail.com
 
+# --- Search engines ---
+# Google Search Console ownership check; jekyll-seo-tag writes the meta tag.
+webmaster_verifications:
+  google: "_Nun8iRRSD2tM7-exMqJlI4SBcUwTWW0GLsJcP1LgFI"
+
 # --- Collaborative annotation (Hypothesis) ---
 # Adds a margin-comment + highlight layer to blog posts for supervisor feedback.
 # Per-post override with `annotations: false` in the post front matter.

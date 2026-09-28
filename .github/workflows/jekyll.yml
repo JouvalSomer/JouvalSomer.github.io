@@ -1,11 +1,10 @@
 name: Build and deploy Jekyll site to GitHub Pages
 
 on:
-  # While the repo is private / you're still tuning, deploy is MANUAL only
-  # (run it from the Actions tab). When you're ready for the site to rebuild
-  # automatically on every push, uncomment the `push` trigger below.
-  # push:
-  #   branches: ["main"]
+  # Rebuild and deploy on every push to main. The manual trigger stays so a
+  # deploy can also be started from the Actions tab.
+  push:
+    branches: ["main"]
   workflow_dispatch:
 
 # Allow GITHUB_TOKEN to deploy to Pages

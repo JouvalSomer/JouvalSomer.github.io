@@ -3,6 +3,13 @@
 # `detail` is Markdown.
 
 talks:
+  - when: Oct 2026
+    title: Machine learning in hydrology
+    kind: Guest lecture
+    where: >-
+      GEO4320/GEO9320 Hydrological Modelling, Department of Geosciences,
+      University of Oslo
+
   - when: Sep 2026
     title: "Towards Fully Data-Driven 10-Day Hourly Reservoir Inflow Forecasts: Exploring Encoder–Decoder Long Short-Term Memory Networks"
     kind: Workshop talk

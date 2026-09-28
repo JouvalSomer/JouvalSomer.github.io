@@ -13,12 +13,13 @@ _includes/               head, header, footer, annotations partials
 _posts/                  Blog posts  (YYYY-MM-DD-title.md)
 _news/                   News items  (short updates)
 _projects/               Project entries
+_data/talks.yml          Talks and teaching (feeds /talks/ and the CV)
 assets/css/style.scss    Styles (light + dark theme)
 assets/js/main.js        Theme toggle + mobile nav
 assets/img/avatar.jpg    Profile photo (present but currently unused)
 assets/cv/               CV PDF goes here (currently none — see below)
 index.html               Home page
-cv.md, publications.md, projects.md, news.md, blog.html
+cv.md, publications.md, projects.md, talks.html, news.md, blog.html
 .github/workflows/       CI build + deploy to Pages
 ```
 
@@ -45,9 +46,9 @@ links (`All news →`), and three-item lists as a default sentence shape.
 
 ## Status & how to publish
 
-The repo is created, pushed, and **private** (git remote `origin` →
-`JouvalSomer/JouvalSomer.github.io`). Nothing is published yet: the deploy
-workflow is set to **manual only** (`workflow_dispatch`).
+The site is live at `https://jouvalsomer.github.io` (git remote `origin` →
+`JouvalSomer/JouvalSomer.github.io`). Every push to `main` rebuilds and deploys
+it; a deploy can also be started by hand from the Actions tab.
 
 ### Privacy note
 GitHub Pages **cannot be password-protected** on a personal account. On **Free**,
@@ -59,12 +60,12 @@ repo stays private, and only publish when you are ready for the site to be publi
 ### When you're ready to go live
 1. Make the repo public (Free plan): `gh repo edit JouvalSomer/JouvalSomer.github.io --visibility public --accept-visibility-change-consequences`. Keep it private if you have Pro.
 2. On GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-3. Trigger a deploy: **Actions tab → "Build and deploy…" → Run workflow**, or push after re-enabling the `push:` trigger in `.github/workflows/jekyll.yml`.
+3. Push to `main`, or trigger a deploy by hand: **Actions tab → "Build and deploy…" → Run workflow**.
 4. Site goes live at `https://jouvalsomer.github.io`.
 
-### Enable automatic rebuilds on every push
-Uncomment the `push:` trigger block at the top of
-`.github/workflows/jekyll.yml`.
+### Automatic rebuilds
+The `push:` trigger at the top of `.github/workflows/jekyll.yml` deploys on
+every push to `main`. Comment it out to go back to manual deploys only.
 
 > If you instead use a differently-named repo (a "project site"), set
 > `baseurl: "/repo-name"` in `_config.yml`.
@@ -85,6 +86,7 @@ bundle exec jekyll serve --livereload
 - **News item:** create `_news/YYYY-MM-DD-slug.md` with a `date:` in front matter; the body is the update.
 - **Project:** create `_projects/slug.md` with `title`, `order`, `description`, optional `stack:` list and `link:`.
 - **Publication:** edit `publications.md` and copy a `pub-item` block.
+- **Talk or teaching:** add an entry at the top of the `talks:` or `teaching:` list in `_data/talks.yml`. It appears on `/talks/` and, for talks, in the CV.
 
 ### Restoring the CV PDF
 

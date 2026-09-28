@@ -145,6 +145,14 @@ img { max-width: 100%; height: auto; }
 .news-body :first-child { margin-top: 0; }
 .news-body :last-child { margin-bottom: 0; }
 
+/* Talks & teaching (reuses the news-item row) */
+.talk-list { margin-bottom: 2em; }
+.news-body .talk-title { font-weight: 600; margin: 0 0 3px; }
+.news-body .talk-meta { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
+.news-body .talk-detail { font-size: 0.95rem; margin-top: 8px; }
+.news-body .talk-detail p { margin: 0; }
+.news-body .talk-links { font-size: 0.9rem; margin: 6px 0 0; }
+
 /* Post list */
 .post-list { list-style: none; padding: 0; margin: 0; }
 .post-list-item { padding: 20px 0; border-bottom: 1px solid var(--border); }

@@ -1,0 +1,35 @@
+---
+layout: page
+title: Talks & Teaching
+permalink: /talks/
+---
+
+<h2>Talks</h2>
+<div class="talk-list">
+  {% for t in site.data.talks.talks %}
+  <div class="news-item">
+    <div class="news-date">{{ t.when }}</div>
+    <div class="news-body">
+      <p class="talk-title">{{ t.title }}</p>
+      <p class="talk-meta">{{ t.kind }}{% if t.where %}. {{ t.where | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% endif %}</p>
+      {% if t.detail %}<div class="talk-detail">{{ t.detail | markdownify }}</div>{% endif %}
+      {% if t.link %}<p class="talk-links"><a href="{{ t.link }}" target="_blank" rel="noopener">{{ t.link_label | default: "Link" }}</a></p>{% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<h2>Teaching</h2>
+<div class="talk-list">
+  {% for t in site.data.talks.teaching %}
+  <div class="news-item">
+    <div class="news-date">{{ t.when }}</div>
+    <div class="news-body">
+      <p class="talk-title">{{ t.title }}</p>
+      {% if t.where %}<p class="talk-meta">{{ t.where | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>{% endif %}
+      {% if t.detail %}<div class="talk-detail">{{ t.detail | markdownify }}</div>{% endif %}
+      {% if t.link %}<p class="talk-links"><a href="{{ t.link }}" target="_blank" rel="noopener">{{ t.link_label | default: "Link" }}</a></p>{% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>

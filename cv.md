@@ -86,6 +86,7 @@ assimilation, and semi-distributed (LSTM and graph neural network) modelling.
   <ul>
     <li>Taught master's and PhD students in GEO4320 — Hydrological Modelling.</li>
     <li>Developed assignments, guided report writing, and graded reports.</li>
+    <li>Gave a guest lecture on machine learning in hydrology (Fall 2025).</li>
   </ul>
 </div>
 
@@ -121,6 +122,15 @@ assimilation, and semi-distributed (LSTM and graph neural network) modelling.
     <li>Trained new employees and handled customer relations professionally.</li>
   </ul>
 </div>
+
+## Talks
+
+{% for t in site.data.talks.talks %}
+<div class="cv-entry">
+  <div class="cv-head"><span class="cv-role">{{ t.title }}</span><span class="cv-date">{{ t.when }}</span></div>
+  <div class="cv-org">{{ t.kind }}. {{ t.where | markdownify | remove: '<p>' | remove: '</p>' | strip }}</div>
+</div>
+{% endfor %}
 
 ## Extracurricular & Leadership
 

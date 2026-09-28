@@ -1,0 +1,40 @@
+# Talks and teaching, newest first. Rendered on /talks/ and in the CV.
+# `when` is shown as written. `title`, `detail` and `link` are optional;
+# `detail` is Markdown.
+
+talks:
+  - when: Sep 2026
+    title: "Towards Fully Data-Driven 10-Day Hourly Reservoir Inflow Forecasts: Exploring Encoder–Decoder Long Short-Term Memory Networks"
+    kind: Workshop talk
+    where: >-
+      *KI og hydrologi*, a one-day workshop hosted by Norsk hydrologiråd, NVE
+      and NIVA at Campus Ullevål, Oslo
+    link: https://www.hydrologiraadet.no/workshop-ki-og-hydrologi-22-september/
+    link_label: Workshop page
+
+  - when: Jan 2026
+    title: Deep learning for short-term hydrological forecasting
+    kind: Invited talk
+    where: Water, Weather and Climate department, Statkraft
+
+  - when: Fall 2025
+    title: Machine learning in hydrology
+    kind: Guest lecture
+    where: >-
+      GEO4320/GEO9320 Hydrological Modelling, Department of Geosciences,
+      University of Oslo
+
+  - when: Feb 2025
+    title: Deep learning for short-term hourly hydrological forecasting
+    kind: Invited talk
+    where: Statkraft trading, Düsseldorf (given remotely)
+
+teaching:
+  - when: 2024–2025
+    title: Teaching assistant, GEO4320/GEO9320 Hydrological Modelling
+    where: >-
+      Department of Geosciences, University of Oslo. Fall 2024 and fall 2025.
+    detail: >-
+      Master's and PhD course. I developed assignments, guided report writing
+      and graded the reports. I took the course myself in fall 2023; it was my
+      first course at the Department of Geosciences, and my first in hydrology.

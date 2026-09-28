@@ -8,7 +8,7 @@
     </label>
 
     <nav class="site-nav">
-      {%- assign nav_pages = "/,Home|/cv/,CV|/publications/,Publications|/projects/,Projects|/news/,News|/blog/,Blog" | split: "|" -%}
+      {%- assign nav_pages = "/,Home|/cv/,CV|/publications/,Publications|/projects/,Projects|/talks/,Talks|/news/,News|/blog/,Blog" | split: "|" -%}
       {%- for item in nav_pages -%}
         {%- assign parts = item | split: "," -%}
         {%- assign href = parts[0] -%}
